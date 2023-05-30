@@ -44,13 +44,7 @@ const Resource: FC<any> = (): ReactElement => {
                     <CircularProgress />
                 ) : (
                     <>
-                        <Card sx={{ maxWidth: 400 }}>
-                            <CardMedia
-                                component="img"
-                                height="250"
-                                image={resource?.color}
-                                alt={resource?.name}
-                            />
+                        <Card sx={{ maxWidth: 400, backgroundColor: resource?.color }}>
                             <CardContent>
                                 <Typography noWrap gutterBottom variant="h6" component="div">
                                     {resource?.name}
