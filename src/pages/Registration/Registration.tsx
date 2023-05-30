@@ -18,7 +18,10 @@ const Registration = () => {
             }}
         >
             <Typography component="h1" variant="h5">
-                Your token is: ${appStore.authStore.token}
+                Your token is: {appStore.authStore.token}
+            </Typography>
+            <Typography component="h1" variant="h5">
+                With id: {appStore.authStore.id}
             </Typography>
             </Box>
         )
@@ -82,7 +85,7 @@ const Registration = () => {
                 {!!appStore.authStore.token && (
                     <p 
                         className="mt-3 mb-3" 
-                        style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Success! Token is: ${appStore.authStore.token}`}
+                        style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Success! Token is: ${appStore.authStore.token} With id: ${appStore.authStore.id}`}
                     </p>
                 )}
                  {!!appStore.authStore.error && (

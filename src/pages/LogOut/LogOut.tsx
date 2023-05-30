@@ -21,14 +21,8 @@ const Logout = () => {
         {!!appStore.authStore.token  && (
             <p 
                 className="mt-3 mb-3" 
-                style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Loggin was successful. Your token is: ${appStore.authStore.token}`}
+                style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Your token is: ${appStore.authStore.token}`}
             </p>    
-        )}
-        {!!appStore.authStore.token  && (
-            <p 
-                className="mt-3 mb-3"
-                style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Registration was successful. Your token is: ${appStore.authStore.token}`}
-            </p>
         )}
             {!!appStore.authStore.token  && (
                 <Box>
@@ -53,30 +47,6 @@ const Logout = () => {
             </Box> 
                    
             )}
-            {!!appStore.authStore.token&& (
-                <Box>
-                    <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 3 }}
-                    onClick = {async (event) =>
-                        {
-                          event.preventDefault();
-                          await store2.logout();
-                        }}
-                >
-                    {store.isLoading ? (
-                        <CircularProgress />
-                    ) : (
-                        'Log Out'
-                    )}
-               
-                    </Button>
-                    
-                </Box>
-            )}
-            
         </Box>
     )
 }

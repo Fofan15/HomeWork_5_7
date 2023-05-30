@@ -29,7 +29,7 @@ const User: FC<any> = (): ReactElement => {
         if(!!appStore.userStore.updatedAt)
            return (
            <Typography align="center" variant="h6" style={{ fontStyle: 'italic' }}> 
-                User is updated at: ${appStore.userStore.updatedAt}
+                User is updated at: {appStore.userStore.updatedAt}
             </Typography>
     )
     return (

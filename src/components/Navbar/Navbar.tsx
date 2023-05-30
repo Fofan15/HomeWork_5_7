@@ -97,7 +97,7 @@ const Navbar: FC = (): ReactElement => {
               ))}
 
               {
-                (!!appStore.authStore.token || appStore.authStore.token)? (  
+                (!!appStore.authStore.token)? (  
                   LogOutRoute.map((page) => (
                     !!page.enabled && <Link
                     key={page.key}
@@ -167,7 +167,7 @@ const Navbar: FC = (): ReactElement => {
               ))}
 
               {
-                (!!appStore.authStore.token || appStore.authStore.token)? (  
+                (!!appStore.authStore.token)? (  
                   LogOutRoute.map((page) => (
                     !!page.enabled && <Link
                     key={page.key}
