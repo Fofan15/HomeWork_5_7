@@ -8,7 +8,7 @@ import RegistrationStore from '../Registration/RegistrationStore';
 const Logout = () => {
     const appStore = useContext(AppStoreContext);
     const store = new LoginStore(appStore.authStore);
-    const store2 = new RegistrationStore(appStore.registerStore)
+    const store2 = new RegistrationStore(appStore.authStore)
     return (
         <Box
             sx={{
@@ -24,10 +24,10 @@ const Logout = () => {
                 style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Loggin was successful. Your token is: ${appStore.authStore.token}`}
             </p>    
         )}
-        {!!appStore.registerStore.token  && (
+        {!!appStore.authStore.token  && (
             <p 
                 className="mt-3 mb-3"
-                style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Registration was successful. Your token is: ${appStore.registerStore.token}`}
+                style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Registration was successful. Your token is: ${appStore.authStore.token}`}
             </p>
         )}
             {!!appStore.authStore.token  && (
@@ -53,7 +53,7 @@ const Logout = () => {
             </Box> 
                    
             )}
-            {!!appStore.registerStore.token&& (
+            {!!appStore.authStore.token&& (
                 <Box>
                     <Button
                     type="submit"

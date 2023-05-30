@@ -1,19 +1,17 @@
-import {
-    makeAutoObservable,
-} from "mobx";
-import RegisterStore from "../../stores/RegisterStore";
+import { makeAutoObservable } from "mobx";
+import AuthStore from "../../stores/AuthStore";
 
 
 class RegistrationStore {
 
-    private registerStore: RegisterStore;
+    private registerStore: AuthStore;
 
     email = '';
     password = '';
     error = '';
     isLoading = false;
 
-    constructor(registerStore: RegisterStore) {
+    constructor(registerStore: AuthStore) {
         this.registerStore = registerStore;
         makeAutoObservable(this);
     }

@@ -6,8 +6,8 @@ import {observer} from "mobx-react-lite";
 
 const Registration = () => {
     const appStore = useContext(AppStoreContext);
-    const store = new RegistrationStore(appStore.registerStore);
-    if (!!appStore.registerStore.token){
+    const store = new RegistrationStore(appStore.authStore);
+    if (!!appStore.authStore.token){
         return(
             <Box
             sx={{
@@ -18,7 +18,7 @@ const Registration = () => {
             }}
         >
             <Typography component="h1" variant="h5">
-                Your token is: ${appStore.registerStore.token}
+                Your token is: ${appStore.authStore.token}
             </Typography>
             </Box>
         )
@@ -79,16 +79,16 @@ const Registration = () => {
                         'Submit'
                     )}
                 </Button>
-                {!!appStore.registerStore.token && (
+                {!!appStore.authStore.token && (
                     <p 
                         className="mt-3 mb-3" 
-                        style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Success! Token is: ${appStore.registerStore.token}`}
+                        style={{ color: 'green', fontSize: 20, fontWeight: 800 }}>{`Success! Token is: ${appStore.authStore.token}`}
                     </p>
                 )}
-                 {!!appStore.registerStore.error && (
+                 {!!appStore.authStore.error && (
                     <p 
                         className="mt-3 mb-3" 
-                        style={{ color: 'red', fontSize: 20, fontWeight: 800 }}>{`Error!  ${appStore.registerStore.error}`}
+                        style={{ color: 'red', fontSize: 20, fontWeight: 800 }}>{`Error!  ${appStore.authStore.error}`}
                     </p>
                 )}
             </Box>

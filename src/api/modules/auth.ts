@@ -5,3 +5,9 @@ export const login = ({ email, password }: { email: string, password: string }) 
     method: 'post',
     data: { email, password }
 })
+
+export const registration = ({ email, password }: { email: string, password: string }) => apiClient({
+    path: `register`,
+    method: 'post',
+    data: { email, password }
+})

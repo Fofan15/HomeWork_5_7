@@ -7,13 +7,11 @@ import { LogOutRoute as appLogOutRoute } from "./routes";
 import { loginRoute as apploginRouteRoute } from "./routes";
 import Layout from "./components/Layout/Layout";
 import AuthStore from "./stores/AuthStore";
-import RegisterStore from "./stores/RegisterStore";
 import UserStore from "./stores/UserStore";
 import {IAppStore} from "./interfaces/appStore";
 
 const store: IAppStore = {
   'authStore':  new AuthStore(),
-  'registerStore': new RegisterStore(),
   'userStore': new UserStore()
 }
 export const AppStoreContext = createContext(store);
